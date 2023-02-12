@@ -1,0 +1,187 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  nav {
+    background-color: $mainColor;
+    .nav_bar {
+      @include Flex($just: center);
+      padding: 20px;
+      background-color: $mainColor;
+      margin: 0 auto;
+      .logo {
+        a {
+          text-decoration: none;
+          h2 {
+            font-weight: 500;
+            color: $mainFontColor;
+          }
+        }
+      }
+      .navigation {
+        #nav_ul {
+          @include Flex($gap: 40px, $just: start);
+          list-style: none;
+          margin: 0;
+          a {
+            text-decoration: none;
+            font-weight: 500;
+            color: $mainFontColor;
+          }
+          .hover_frst_li {
+            position: relative;
+            .hover_first {
+              text-decoration: none;
+              font-weight: 500;
+              color: $mainFontColor;
+              .fa-chevron-down {
+                scale: 0.9;
+                margin-left: 5px;
+                transition: 0.2s ease-in;
+              }
+            }
+            .hover_second,
+            .hover_third {
+              @extend .hover_first;
+            }
+            .card_holder_first {
+              @include Flex($direct: row);
+              position: absolute;
+              border-radius: 15px;
+              background-color: rgb(255, 255, 255);
+              width: max-content;
+              height: auto;
+              display: none;
+              .cards_left {
+                @include Flex($direct: column, $gap: 10px);
+                padding: 10px;
+                width: 360px;
+                height: auto;
+                h2 {
+                  font-weight: 400;
+                  color: rgb(141, 141, 141, 0.8);
+                  font-size: 17px;
+                  margin-top: 5px;
+                  margin-left: 10px;
+                }
+                a {
+                  .card1 {
+                    @include Flex($gap: 15px);
+                    border-radius: 10px;
+                    padding: 10px;
+                    transition: 0.4s ease-in-out;
+
+                    .icon {
+                      @include Flex($align: center, $just: center);
+                      margin-top: 8px;
+                      margin-left: 8px;
+                      width: 45px;
+                      height: 40px;
+                      background-color: rgb(141, 141, 141, 0.3);
+                      border-radius: 50%;
+                      transition: 0.4s ease-in-out;
+                      padding: 3px 6px;
+                      i {
+                        color: $mainColor;
+                        font-size: 18px;
+                      }
+                    }
+                    .text_place {
+                      h4 {
+                        font-size: 20px;
+                        color: $mainColor;
+                        font-weight: 600;
+                      }
+                      p {
+                        color: rgb(141, 141, 141, 0.6);
+                        margin: 0;
+                      }
+                    }
+                    &:hover {
+                      .icon {
+                        background-color: white;
+                      }
+                    }
+                  }
+                  &:hover {
+                    .card1 {
+                      background-color: rgb(141, 141, 141, 0.3);
+                    }
+                  }
+                }
+                .card2,
+                .card3 {
+                  @extend .card1;
+                }
+              }
+              .cards_right {
+                @extend .cards_left;
+              }
+            }
+            .card_holder_second,
+            .card_holder_third {
+              @extend .card_holder_first;
+            }
+            &:hover {
+              .card_holder_first {
+                display: flex;
+              }
+            }
+          }
+          .hover_second_li,
+          .hover_third_li {
+            @extend .hover_frst_li;
+          }
+
+          .hover_first,
+          .hover_second,
+          .hover_third {
+            &:hover {
+              .fa-chevron-down {
+                rotate: 180deg;
+              }
+            }
+          }
+        }
+      }
+
+      .login {
+        @include Flex($gap: 20px, $just: end);
+        a {
+          color: $mainFontColor;
+          text-decoration: none;
+          font-weight: 500;
+        }
+        .buttons_login {
+          @include Flex($gap: 15px);
+          button {
+            color: $mainFontColor;
+            font-weight: 500;
+            background-color: $btnColor;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: none;
+            transition: 0.4s ease-in-out;
+            &:hover {
+              background-color: rgb(5, 30, 173);
+            }
+          }
+          button:last-child {
+            color: $mainFontColor;
+            font-weight: 500;
+            background-color: transparent;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid rgb(255, 255, 255, 0.3);
+            &:hover {
+              background-color: rgb(255, 255, 255, 0.4);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+section {
+  margin-top: 100px;
+}

@@ -17,11 +17,11 @@ ul {
   margin: 0;
 }
 
-html {
+body {
   height: 100vh;
-  background: linear-gradient(to top, #132a97, 20%, #061956);
+  background: linear-gradient(to top, #132a97, 5%, #061956);
 }
-html ::-webkit-scrollbar {
+body ::-webkit-scrollbar {
   display: none;
 }
 
@@ -170,6 +170,7 @@ header nav .nav_bar .navigation #nav_ul .hover_third_li .card_holder_third {
   width: max-content;
   height: auto;
   display: none;
+  z-index: 1;
 }
 header
   nav
@@ -4831,5 +4832,102 @@ header nav .nav_bar .login .buttons_login button:last-child:hover {
 }
 
 section {
-  margin-top: 100px;
+  margin-top: 400px;
+}
+section .main_banner .banner {
+  padding: 10px;
+}
+section .main_banner .banner .text_place {
+  display: flex;
+}
+section .main_banner .banner .text_place .text_place_2 h2,
+section .main_banner .banner .text_place .text_roller h2 {
+  font-size: 50px;
+  font-weight: 600;
+  color: white;
+}
+section .main_banner .banner .text_place .roller_place {
+  position: relative;
+  z-index: -10;
+  top: -10px;
+  width: 350px;
+  height: 70px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+section .main_banner .banner .text_place .roller_place .text_roller {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+}
+section .main_banner .banner .text_place .roller_place .text_roller h2 {
+  color: #2240cd;
+  animation-name: textmoving;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+@keyframes textmoving {
+  from {
+    transform: translateY(55px);
+  }
+  20% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(-65px);
+  }
+  60% {
+    transform: translateY(-135px);
+  }
+  80% {
+    transform: translateY(-203px);
+  }
+  to {
+    transform: translateY(-255px);
+  }
+}
+section .main_banner .banner .second_text {
+  margin-top: 20px;
+}
+section .main_banner .banner .second_text p {
+  color: rgba(141, 141, 141, 0.6);
+  font-size: 25px;
+  line-height: 30px;
+  margin: 0;
+}
+section .main_banner .banner .btns_under_text {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+section .main_banner .banner .btns_under_text button:first-child {
+  background-color: #2240cd;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 12px 15px;
+}
+section .main_banner .banner .btns_under_text button:first-child:hover {
+  background-color: #122783;
+}
+section .main_banner .banner .btns_under_text button:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 15px;
+  border-radius: 10px;
+}
+section
+  .main_banner
+  .banner
+  .btns_under_text
+  button:last-child
+  .fa-circle-play {
+  font-size: 30px;
 } /*# sourceMappingURL=style.css.map */

@@ -3,12 +3,16 @@ header {
   top: 0;
   width: 100%;
   nav {
+    width: 100%;
     background-color: $mainColor;
+    padding: 10px;
     .nav_bar {
-      @include Flex($just: center);
+      @include Flex($just: space-between);
       padding: 20px;
-      background-color: $mainColor;
       margin: 0 auto;
+      // width: 100%;
+      height: 100px;
+      box-sizing: border-box;
       .logo {
         a {
           text-decoration: none;
@@ -30,14 +34,18 @@ header {
           }
           .hover_frst_li {
             position: relative;
+            display: flex;
             .hover_first {
               text-decoration: none;
               font-weight: 500;
               color: $mainFontColor;
+            }
+            .icon_chevron_down {
               .fa-chevron-down {
-                scale: 0.9;
-                margin-left: 5px;
+                font-size: 12px;
+                margin-left: 3px;
                 transition: 0.2s ease-in;
+                color: $mainFontColor;
               }
             }
             .hover_second,
@@ -47,12 +55,13 @@ header {
             .card_holder_first {
               @include Flex($direct: row);
               position: absolute;
+              top: 40px;
               border-radius: 15px;
               background-color: rgb(255, 255, 255);
               width: max-content;
               height: auto;
               display: none;
-              z-index: 1;
+              z-index: 999;
               .cards_left {
                 @include Flex($direct: column, $gap: 10px);
                 padding: 10px;
@@ -127,27 +136,22 @@ header {
               .card_holder_first {
                 display: flex;
               }
+              .icon_chevron_down {
+                .fa-chevron-down {
+                  rotate: 180deg;
+                }
+              }
             }
           }
           .hover_second_li,
           .hover_third_li {
             @extend .hover_frst_li;
           }
-
-          .hover_first,
-          .hover_second,
-          .hover_third {
-            &:hover {
-              .fa-chevron-down {
-                rotate: 180deg;
-              }
-            }
-          }
         }
       }
 
       .login {
-        @include Flex($gap: 20px, $just: end);
+        @include Flex($gap: 30px, $just: end);
         a {
           color: $mainFontColor;
           text-decoration: none;
@@ -155,7 +159,7 @@ header {
         }
         .buttons_login {
           @include Flex($gap: 15px);
-          button {
+          button:first-child {
             color: $mainFontColor;
             font-weight: 500;
             background-color: $btnColor;
@@ -163,6 +167,7 @@ header {
             border-radius: 10px;
             border: none;
             transition: 0.4s ease-in-out;
+            height: 70px;
             &:hover {
               background-color: rgb(5, 30, 173);
             }
@@ -174,6 +179,7 @@ header {
             padding: 15px 20px;
             border-radius: 10px;
             border: 1px solid rgb(255, 255, 255, 0.3);
+            height: 70px;
             &:hover {
               background-color: rgb(255, 255, 255, 0.4);
             }
@@ -187,98 +193,112 @@ section {
   margin-top: 400px;
   .main_banner {
     .banner {
+      @include Flex($wrap: nowrap);
       // background-color: aqua;
       padding: 10px;
       .text_place {
-        @include Flex();
-        .text_place_2,
-        .text_roller {
+        @include Flex($direct: column);
+        .text_part_1,
+        .text_part_2 {
           h2 {
             font-size: 50px;
             font-weight: 600;
             color: $mainFontColor;
           }
         }
-        .roller_place {
-          position: relative;
-          z-index: -10;
-          top: -10px;
-          width: 350px;
-          height: 70px;
-          // background-color: red;
-          overflow: hidden;
-          margin-top: 10px;
-          margin-left: 5px;
-          .text_roller {
-            @include Flex($direct: column);
-            position: absolute;
-            top: 0;
-            h2 {
-              color: #2240cd;
-              animation-name: textmoving;
-              animation-duration: 8s;
-              animation-iteration-count: infinite;
-            }
-          }
-          @keyframes textmoving {
-            from {
-              transform: translateY(55px);
-            }
-            20% {
-              transform: translateY(0px);
-            }
-
-            40% {
-              transform: translateY(-65px);
-            }
-            60% {
-              transform: translateY(-135px);
-            }
-            80% {
-              transform: translateY(-203px);
-            }
-
-            to {
-              transform: translateY(-255px);
-            }
-          }
-        }
       }
-      .second_text {
-        margin-top: 20px;
-        p {
-          color: rgb(141, 141, 141, 0.6);
-          font-size: 25px;
-          line-height: 30px;
-          margin: 0;
-        }
-      }
-      .btns_under_text {
-        @include Flex($gap: 10px);
-        margin-top: 30px;
-        button:first-child {
-          background-color: #2240cd;
-          border-radius: 10px;
-          border: none;
-          color: $mainFontColor;
-          font-size: 20px;
-          padding: 12px 15px;
-          &:hover {
-            background-color: #122783;
+      .roller_place {
+        position: relative;
+        z-index: -1;
+        top: 0px;
+        width: 350px;
+        height: 70px;
+        // background-color: red;
+        overflow: hidden;
+        // margin-top: 10px;
+        // margin-left: 5px;
+        .text_roller {
+          @include Flex($direct: column);
+          // position: absolute;
+          // top: 0;
+          h2 {
+            font-size: 50px;
+            font-weight: 600;
+            color: $mainFontColor;
+            color: #2240cd;
+            animation-name: textmoving;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            transition: 0.5s ease-in-out;
           }
         }
-        button:last-child {
-          @include Flex($align: center, $gap: 10px);
-          color: $mainFontColor;
-          background-color: transparent;
-          border: 1px solid rgb(255, 255, 255, 0.3);
-          padding: 12px 15px;
-          border-radius: 10px;
-          .fa-circle-play {
-            font-size: 30px;
+        @keyframes textmoving {
+          from {
+            transform: translateY(57px);
+          }
+          20% {
+            transform: translateY(0px);
+          }
+
+          40% {
+            transform: translateY(-65px);
+          }
+          60% {
+            transform: translateY(-135px);
+          }
+          80% {
+            transform: translateY(-203px);
+          }
+
+          to {
+            transform: translateY(-255px);
           }
         }
       }
     }
+    .second_text {
+      margin-top: 20px;
+      p {
+        color: rgb(141, 141, 141, 0.6);
+        font-size: 25px;
+        line-height: 30px;
+        margin: 0;
+      }
+    }
+    .btns_under_text {
+      @include Flex($gap: 10px);
+      margin-top: 30px;
+      button:first-child {
+        background-color: #2240cd;
+        border-radius: 10px;
+        border: none;
+        color: $mainFontColor;
+        font-size: 20px;
+        padding: 12px 15px;
+        &:hover {
+          background-color: #122783;
+        }
+      }
+      button:last-child {
+        @include Flex($align: center, $gap: 10px);
+        color: $mainFontColor;
+        background-color: transparent;
+        border: 1px solid rgb(255, 255, 255, 0.3);
+        padding: 12px 15px;
+        border-radius: 10px;
+        .fa-circle-play {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .text_place {
+    display: none;
+  }
+  .navigation {
+    display: none;
   }
 }

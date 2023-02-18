@@ -29,6 +29,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 99999;
 }
 header nav {
   width: 100%;
@@ -4988,4 +4989,33 @@ section .main_banner .btns_under_text button:last-child .fa-circle-play {
 }
 .text_roller .left {
   text-align: left;
+}
+
+.second_section {
+  margin-top: 200px;
+  background-color: transparent;
+}
+.second_section .text_on_left h2,
+.second_section .text_on_left h3 {
+  color: white;
+}
+.second_section .text_on_left h2 {
+  font-size: 45px;
+}
+.second_section .text_on_left p {
+  color: rgba(141, 141, 141, 0.7);
+  font-size: 20px;
+}
+.second_section .planet_right {
+  width: 900px;
+}
+.second_section .planet_right img {
+  width: 100%;
+}
+
+.third_section .cover_png {
+  width: 100%;
+}
+.third_section .cover_png img {
+  width: 100%;
 } /*# sourceMappingURL=style.css.map */

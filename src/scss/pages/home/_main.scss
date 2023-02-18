@@ -2,6 +2,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 99999;
   nav {
     width: 100%;
     background-color: $mainColor;
@@ -379,5 +380,36 @@ section {
   }
   .left {
     text-align: left;
+  }
+}
+.second_section {
+  margin-top: 200px;
+  background-color: transparent;
+  .text_on_left {
+    h2,
+    h3 {
+      color: $mainFontColor;
+    }
+    h2 {
+      font-size: 45px;
+    }
+    p {
+      color: rgb(141, 141, 141, 0.7);
+      font-size: 20px;
+    }
+  }
+  .planet_right {
+    width: 900px;
+    img {
+      width: 100%;
+    }
+  }
+}
+.third_section {
+  .cover_png {
+    width: 100%;
+    img {
+      width: 100%;
+    }
   }
 }

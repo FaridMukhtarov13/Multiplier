@@ -13,10 +13,13 @@ p {
 ul {
   margin: 0;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 body {
-  height: 100vh;
-  background: linear-gradient(to top, #132a97, 5%, #061956);
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  background-color: #02113b !important;
+  background-image: url(/src/img/svg/6152f5f9477fcc87ae117e8a_bg\ image.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
